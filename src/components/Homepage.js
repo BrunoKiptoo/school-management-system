@@ -346,6 +346,14 @@ const componentsData = [
       icon: BsClipboard,
       link: '/teacher-on-duty-allocations',
     },
+    {
+        id: 20,
+        title: 'Timetable Management',
+        description: 'Generate, edit, and view timetables for classes, subjects, and teachers.',
+        icon: BsCalendar,
+        link: '/timetable-management',
+        }
+    
   
   
     // Add other components to the data source

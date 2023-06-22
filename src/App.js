@@ -19,6 +19,7 @@ import EventManagement from './components/EventsManagement/EventManagement';
 import TendersMnagement from './components/TendersManagement/TendersMnagement';
 import StockManagement from './components/StockManagement/StockManagement';
 import TODAllocations from './components/TeacherOnDutyAllocations/TODAllocations';
+import TimetableManagement from './components/Timetable Management/TimetableManagement';
 function App() {
   return (
     <Router>
@@ -43,6 +44,7 @@ function App() {
           <Route path="/tenders-management" element={<TendersMnagement />} />
           <Route path="/stock-keeping" element={<StockManagement />} />
           <Route path="/teacher-on-duty-allocations" element={<TODAllocations/>} />
+          <Route path="/timetable-management" element={<TimetableManagement/>} />
           {/* Add more routes for other components */}
         </Routes>
       </div>
