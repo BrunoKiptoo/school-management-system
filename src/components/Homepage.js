@@ -1,189 +1,449 @@
-import React from 'react';
+
+
+
+
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { BsCalendarEvent, BsPencil, BsLayers, BsClipboard, BsChatSquareDots, BsBusFill, BsPersonSquare, BsBookshelf, BsBarChart, BsPeopleFill, BsFileText, BsBook, BsBriefcaseFill, BsSearch, BsCalendar, BsGraphUp } from 'react-icons/bs';
+// import { MdDirectionsCar } from 'react-icons/md';
+
+// const componentsData = [
+//     {
+//       id: 1,
+//       title: 'Student Management',
+//       description: 'Manage student profiles, attendance, grades, discipline, and communication.',
+//       icon: BsPeopleFill,
+//       link: '/student-management',
+//     },
+//     {
+//       id: 2,
+//       title: 'Teacher Management',
+//       description: 'Manage teacher profiles, class schedules, grades, and communication.',
+//       icon: BsBook,
+//       link: '/teacher-management',
+//     },
+//     {
+//       id: 3,
+//       title: 'Guardian Management',
+//       description: 'Manage guardian profiles, payment history, and communication.',
+//       icon: BsBriefcaseFill,
+//       link: '/guardian-management',
+//     },
+//     {
+//       id: 4,
+//       title: 'Attendance Tracking',
+//       description: 'Track student attendance, generate reports, and manage notifications.',
+//       icon: BsCalendar,
+//       link: '/attendance-tracking',
+//     },
+//     {
+//       id: 5,
+//       title: 'Class Scheduling',
+//       description: 'Create and manage class schedules, room assignments, and schedule adjustments.',
+//       icon: BsGraphUp,
+//       link: '/class-scheduling',
+//     },
+//     {
+//       id: 6,
+//       title: 'Grade Management',
+//       description: 'Manage student grades, progress reports, and perform grade analysis.',
+//       icon: BsFileText,
+//       link: '/grade-management',
+//     },
+//     {
+//       id: 7,
+//       title: 'Course Management',
+//       description: 'Manage courses, course materials, assignments, and details.',
+//       icon: BsBook,
+//       link: '/course-management',
+//     },
+//     {
+//       id: 8,
+//       title: 'Examination and Assessment ',
+//       description: 'Manage exams, schedules, grading, and analyze examination results.',
+//       icon: BsSearch,
+//       link: '/examination-assessment',
+//     },
+//     {
+//       id: 10,
+//       title: 'Communication and Collaboration',
+//       description: 'Enable internal messaging, announcements, parent-teacher communication, and discussion forums.',
+//       icon: BsChatSquareDots,
+//       link: 'communication-collaboration',
+//     },
+//     {
+//       id: 11,
+//       title: 'Financial Management',
+//       description: 'Manage fee management, payments, receipts, and financial reports.',
+//       icon: BsBarChart,
+//       link: '/financial-management',
+//     },
+//     {
+//       id: 12,
+//       title: 'Library Management',
+//       description: 'Manage library catalog, book borrowing, reservations, and bookkeeping.',
+//       icon: BsBookshelf,
+//       link: '/library-management',
+//     },
+//     {
+//       id: 13,
+//       title: 'Staff Management',
+//       description: 'Manage staff profiles, attendance, and communication.',
+//       icon: BsPersonSquare,
+//       link: '/staff-management',
+//     },
+//     {
+//       id: 14,
+//       title: 'Transportation Management',
+//       description: 'Manage bus routes, student transportation tracking, and delay notifications.',
+//       icon: MdDirectionsCar,
+//       link: '/transportation-management',
+//     },
+//     {
+//       id: 15,
+//       title: 'Reporting and Analytics',
+//       description: 'Generate reports, display dashboard, and visualize data for insights.',
+//       icon: BsBarChart,
+//       link: '/reporting-analytics',
+//     },
+//     {
+//       id: 16,
+//       title: 'Events Management',
+//       description: 'Manage event calendars, details, registrations, and attendance.',
+//       icon: BsCalendarEvent,
+//       link: '/events-management',
+//     },
+//     {
+//       id: 17,
+//       title: 'Tenders Management',
+//       description: 'Manage tender listings, details, submissions, evaluations, and awards.',
+//       icon: BsPencil,
+//       link: '/tenders-management',
+//     },
+//     {
+//       id: 18,
+//       title: 'Stock Keeping',
+//       description: 'Manage stock inventory, items, details, entries, and requests.',
+//       icon: BsLayers,
+//       link: '/stock-keeping',
+//     },
+//     {
+//       id: 19,
+//       title: 'Teacher On-Duty Allocations',
+//       description: 'Manage teacher on-duty schedules, allocations, and notifications.',
+//       icon: BsClipboard,
+//       link: '/teacher-on-duty-allocations',
+//     },
+  
+  
+//     // Add other components to the data source
+//   ];
+
+// function Homepage() {
+//   const [searchQuery, setSearchQuery] = useState('');
+
+//   const handleSearchChange = (event) => {
+//     setSearchQuery(event.target.value);
+//   };
+
+//   const handleSearchSubmit = (event) => {
+//     event.preventDefault();
+//     console.log('Search Query:', searchQuery);
+//   };
+
+//   const filteredComponents = componentsData.filter((component) =>
+//     component.title.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
+//   return (
+//     <div className="bg-gray-900 text-white">
+//       <header className="bg-black py-6">
+//         <div className="container mx-auto px-4"></div>
+//       </header>
+//       <main className="container mx-auto px-4 py-8">
+//         <div className="flex mb-4">
+//           <input
+//             type="text"
+//             placeholder="Search components"
+//             value={searchQuery}
+//             onChange={handleSearchChange}
+//             className="flex-grow bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none"
+//           />
+//           <button
+//             type="submit"
+//             onClick={handleSearchSubmit}
+//             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg"
+//           >
+//             <BsSearch className="inline-block text-xl" />
+//           </button>
+//         </div>
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+//           {filteredComponents.map((component, index) => (
+//             <div
+//               key={component.id}
+//               className={`bg-gray-${index % 4 + 6}00 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300`}
+//               style={{ backdropFilter: 'blur(8px)' }}
+//             >
+//               <h3 className="text-xl font-semibold mb-2">
+//                 {React.createElement(component.icon, {
+//                   className: 'inline-block mr-2 text-blue-400 text-xl',
+//                 })}
+//                 {component.title}
+//               </h3>
+//               <p className="text-gray-300">{component.description}</p>
+//               <Link
+//                 to={component.link}
+//                 className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg block"
+//               >
+//                 Go to {component.title}
+//               </Link>
+//             </div>
+//           ))}
+//         </div>
+//       </main>
+//       <footer className="bg-black py-4 text-center">
+//         <p className="text-gray-500">University Management System &copy; 2023. All rights reserved.</p>
+//       </footer>
+//     </div>
+//   );
+// }
+
+// export default Homepage;
+
+
+
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BsCalendarEvent, BsPencil, BsLayers, BsClipboard, BsChatSquareDots, BsBusFill, BsPersonSquare, BsBookshelf, BsBarChart, BsPeopleFill, BsFileText, BsBook, BsBriefcaseFill, BsSearch, BsCalendar, BsGraphUp } from 'react-icons/bs';
+import { MdDirectionsCar } from 'react-icons/md';
+
+
+const componentsData = [
+    {
+      id: 1,
+      title: 'Student Management',
+      description: 'Manage student profiles, attendance, grades, discipline, and communication.',
+      icon: BsPeopleFill,
+      link: '/student-management',
+    },
+    {
+      id: 2,
+      title: 'Teacher Management',
+      description: 'Manage teacher profiles, class schedules, grades, and communication.',
+      icon: BsBook,
+      link: '/teacher-management',
+    },
+    {
+      id: 3,
+      title: 'Guardian Management',
+      description: 'Manage guardian profiles, payment history, and communication.',
+      icon: BsBriefcaseFill,
+      link: '/guardian-management',
+    },
+    {
+      id: 4,
+      title: 'Attendance Tracking',
+      description: 'Track student attendance, generate reports, and manage notifications.',
+      icon: BsCalendar,
+      link: '/attendance-tracking',
+    },
+    {
+      id: 5,
+      title: 'Class Scheduling',
+      description: 'Create and manage class schedules, room assignments, and schedule adjustments.',
+      icon: BsGraphUp,
+      link: '/class-scheduling',
+    },
+    {
+      id: 6,
+      title: 'Grade Management',
+      description: 'Manage student grades, progress reports, and perform grade analysis.',
+      icon: BsFileText,
+      link: '/grade-management',
+    },
+    {
+      id: 7,
+      title: 'Course Management',
+      description: 'Manage courses, course materials, assignments, and details.',
+      icon: BsBook,
+      link: '/course-management',
+    },
+    {
+      id: 8,
+      title: 'Examination and Assessment ',
+      description: 'Manage exams, schedules, grading, and analyze examination results.',
+      icon: BsSearch,
+      link: '/examination-assessment',
+    },
+    {
+      id: 10,
+      title: 'Communication and Collaboration',
+      description: 'Enable internal messaging, announcements, parent-teacher communication, and discussion forums.',
+      icon: BsChatSquareDots,
+      link: 'communication-collaboration',
+    },
+    {
+      id: 11,
+      title: 'Financial Management',
+      description: 'Manage fee management, payments, receipts, and financial reports.',
+      icon: BsBarChart,
+      link: '/financial-management',
+    },
+    {
+      id: 12,
+      title: 'Library Management',
+      description: 'Manage library catalog, book borrowing, reservations, and bookkeeping.',
+      icon: BsBookshelf,
+      link: '/library-management',
+    },
+    {
+      id: 13,
+      title: 'Staff Management',
+      description: 'Manage staff profiles, attendance, and communication.',
+      icon: BsPersonSquare,
+      link: '/staff-management',
+    },
+    {
+      id: 14,
+      title: 'Transportation Management',
+      description: 'Manage bus routes, student transportation tracking, and delay notifications.',
+      icon: MdDirectionsCar,
+      link: '/transportation-management',
+    },
+    {
+      id: 15,
+      title: 'Reporting and Analytics',
+      description: 'Generate reports, display dashboard, and visualize data for insights.',
+      icon: BsBarChart,
+      link: '/reporting-analytics',
+    },
+    {
+      id: 16,
+      title: 'Events Management',
+      description: 'Manage event calendars, details, registrations, and attendance.',
+      icon: BsCalendarEvent,
+      link: '/events-management',
+    },
+    {
+      id: 17,
+      title: 'Tenders Management',
+      description: 'Manage tender listings, details, submissions, evaluations, and awards.',
+      icon: BsPencil,
+      link: '/tenders-management',
+    },
+    {
+      id: 18,
+      title: 'Stock Keeping',
+      description: 'Manage stock inventory, items, details, entries, and requests.',
+      icon: BsLayers,
+      link: '/stock-keeping',
+    },
+    {
+      id: 19,
+      title: 'Teacher On-Duty Allocations',
+      description: 'Manage teacher on-duty schedules, allocations, and notifications.',
+      icon: BsClipboard,
+      link: '/teacher-on-duty-allocations',
+    },
+  
+  
+    // Add other components to the data source
+  ];
 
 function Homepage() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    console.log('Search Query:', searchQuery);
+  };
+
+  const getRandomColor = () => {
+    const colors = [
+      'bg-red-500',
+      'bg-blue-500',
+      'bg-green-500',
+      'bg-yellow-500',
+      'bg-purple-500',
+      'bg-indigo-500',
+      'bg-pink-500',
+      'bg-teal-500',
+      'bg-orange-500',
+      'bg-gray-500',
+      'bg-red-600',
+      'bg-blue-600',
+      'bg-green-600',
+      'bg-yellow-600',
+      'bg-purple-600',
+      'bg-indigo-600',
+      'bg-pink-600',
+      'bg-teal-600',
+      'bg-orange-600',
+    ];
+    
+    const shuffledColors = colors.sort(() => 0.5 - Math.random());
+    return shuffledColors.shift();
+  };
+  
+
+  const filteredComponents = componentsData.filter((component) =>
+    component.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="bg-gray-900 text-white">
       <header className="bg-black py-6">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold">University Management System</h1>
-        </div>
+        <div className="container mx-auto px-4"></div>
       </header>
       <main className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-4">Welcome to the University Management System</h2>
+        <div className="flex mb-4">
+          <input
+            type="text"
+            placeholder="Search components"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="flex-grow bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none"
+          />
+          <button
+            type="submit"
+            onClick={handleSearchSubmit}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg"
+          >
+            <BsSearch className="inline-block text-xl" />
+          </button>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* Student Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Student Management</h3>
-            <p className="text-gray-300">Manage student profiles, attendance, grades, discipline, and communication.</p>
-            <Link to="/student-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Student Management
-            </Link>
-          </div>
-
-          {/* Teacher Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Teacher Management</h3>
-            <p className="text-gray-300">Manage teacher profiles, class schedules, grades, and communication.</p>
-            <Link to="/teacher-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Teacher Management
-            </Link>
-          </div>
-
-          {/* Guardian Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Guardian Management</h3>
-            <p className="text-gray-300">Manage guardian profiles, payment history, and communication.</p>
-            <Link to="/guardian-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Guardian Management
-            </Link>
-          </div>
-
-          {/* Attendance Tracking */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Attendance Tracking</h3>
-            <p className="text-gray-300">Track student attendance, generate reports, and manage notifications.</p>
-            <Link to="/attendance-tracking" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Attendance Tracking
-            </Link>
-          </div>
-
-          {/* Grade Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Grade Management</h3>
-            <p className="text-gray-300">Manage student grades, progress reports, and perform grade analysis.</p>
-            <Link to="/grade-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Grade Management
-            </Link>
-          </div>
-
-          {/* Class Scheduling */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Class Scheduling</h3>
-            <p className="text-gray-300">Create and manage class schedules, room assignments, and schedule adjustments.</p>
-            <Link to="/class-scheduling" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Class Scheduling
-            </Link>
-          </div>
-
-          {/* Course Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Course Management</h3>
-            <p className="text-gray-300">Manage courses, course materials, assignments, and details.</p>
-            <Link to="/course-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Course Management
-            </Link>
-          </div>
-
-          {/* Examination and Assessment */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Examination and Assessment</h3>
-            <p className="text-gray-300">Manage exams, schedules, grading, and analyze examination results.</p>
-            <Link to="/examination-assessment" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Examination and Assessment
-            </Link>
-          </div>
-
-          {/* Communication and Collaboration */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Communication and Collaboration</h3>
-            <p className="text-gray-300">Enable internal messaging, announcements, parent-teacher communication, and discussion forums.</p>
-            <Link to="/communication-collaboration" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Communication and Collaboration
-            </Link>
-          </div>
-
-          {/* Financial Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Financial Management</h3>
-            <p className="text-gray-300">Manage fee management, payments, receipts, and financial reports.</p>
-            <Link to="/financial-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Financial Management
-            </Link>
-          </div>
-
-          {/* Library Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Library Management</h3>
-            <p className="text-gray-300">Manage library catalog, book borrowing, reservations, and bookkeeping.</p>
-            <Link to="/library-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Library Management
-            </Link>
-          </div>
-
-          {/* Transportation Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Transportation Management</h3>
-            <p className="text-gray-300">Manage bus routes, student transportation tracking, and delay notifications.</p>
-            <Link to="/transportation-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Transportation Management
-            </Link>
-          </div>
-
-          {/* Reporting and Analytics */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Reporting and Analytics</h3>
-            <p className="text-gray-300">Generate reports, display dashboard, and visualize data for insights.</p>
-            <Link to="/reporting-analytics" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Reporting and Analytics
-            </Link>
-          </div>
-
-          {/* Authentication and User Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Authentication and User Management</h3>
-            <p className="text-gray-300">Manage user authentication, registration, and user profiles.</p>
-            <Link to="/authentication-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Authentication and User Management
-            </Link>
-          </div>
-
-          {/* Staff Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Staff Management</h3>
-            <p className="text-gray-300">Manage staff profiles, attendance, and communication.</p>
-            <Link to="/staff-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Staff Management
-            </Link>
-          </div>
-
-          {/* Events Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Events Management</h3>
-            <p className="text-gray-300">Manage event calendars, details, registrations, and attendance.</p>
-            <Link to="/events-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Events Management
-            </Link>
-          </div>
-
-          {/* Tenders Management */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Tenders Management</h3>
-            <p className="text-gray-300">Manage tender listings, details, submissions, evaluations, and awards.</p>
-            <Link to="/tenders-management" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Tenders Management
-            </Link>
-          </div>
-
-          {/* Stock Keeping */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Stock Keeping</h3>
-            <p className="text-gray-300">Manage stock inventory, items, details, entries, and requests.</p>
-            <Link to="/stock-keeping" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Stock Keeping
-            </Link>
-          </div>
-
-          {/* Teacher On-Duty Allocations */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Teacher On-Duty Allocations</h3>
-            <p className="text-gray-300">Manage teacher on-duty schedules, allocations, and notifications.</p>
-            <Link to="/teacher-on-duty-allocations" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-              Go to Teacher On-Duty Allocations
-            </Link>
-          </div>
+          {filteredComponents.map((component) => (
+            <div
+              key={component.id}
+              className={`p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ${getRandomColor()}`}
+              style={{ backdropFilter: 'blur(8px)' }}
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                {React.createElement(component.icon, {
+                  className: 'inline-block mr-2 text-blue-400 text-xl',
+                })}
+                {component.title}
+              </h3>
+              <p className="text-gray-300">{component.description}</p>
+              <Link
+                to={component.link}
+                className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg block"
+              >
+                Go to {component.title}
+              </Link>
+            </div>
+          ))}
         </div>
       </main>
+      <footer className="bg-black py-4 text-center">
+        <p className="text-gray-500">University Management System &copy; 2023. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
