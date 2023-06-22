@@ -384,11 +384,43 @@ function Homepage() {
       'bg-pink-600',
       'bg-teal-600',
       'bg-orange-600',
+      'bg-gray-600',
+      'bg-red-700',
+      'bg-blue-700',
+      'bg-green-700',
+      'bg-yellow-700',
+      'bg-purple-700',
+      'bg-indigo-700',
+      'bg-pink-700',
+      'bg-teal-700',
+      'bg-orange-700',
+      'bg-gray-700',
+      'bg-red-800',
+      'bg-blue-800',
+      'bg-green-800',
+      'bg-yellow-800',
+      'bg-purple-800',
+      'bg-indigo-800',
+      'bg-pink-800',
+      'bg-teal-800',
+      'bg-orange-800',
+      'bg-gray-800',
+      'bg-red-900',
+      'bg-blue-900',
+      'bg-green-900',
+      'bg-yellow-900',
+      'bg-purple-900',
+      'bg-indigo-900',
+      'bg-pink-900',
+      'bg-teal-900',
+      'bg-orange-900',
+      'bg-gray-900',
     ];
-    
-    const shuffledColors = colors.sort(() => 0.5 - Math.random());
-    return shuffledColors.shift();
+  
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
   };
+  
   
 
   const filteredComponents = componentsData.filter((component) =>
