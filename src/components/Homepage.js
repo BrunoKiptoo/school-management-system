@@ -429,9 +429,9 @@ function Homepage() {
 
   return (
     <div className="bg-gray-900 text-white">
-      <header className="bg-black py-6">
+      {/* <header className="bg-black py-6">
         <div className="container mx-auto px-4"></div>
-      </header>
+      </header> */}
       <main className="container mx-auto px-4 py-8">
         <div className="flex mb-4">
           <input
