@@ -20,12 +20,14 @@ import TendersMnagement from './components/TendersManagement/TendersMnagement';
 import StockManagement from './components/StockManagement/StockManagement';
 import TODAllocations from './components/TeacherOnDutyAllocations/TODAllocations';
 import TimetableManagement from './components/Timetable Management/TimetableManagement';
+import UserAuthentication from './components/UserAuthentication';
 function App() {
   return (
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<UserAuthentication />} />
+          <Route path="/home" element={<Homepage />} />
           <Route path="/student-management" element={<StudentManagement />} />
           <Route path="/teacher-management" element={<TeacherManagement />} />
           <Route path="/guardian-management" element={<GuardianManagement />} />
