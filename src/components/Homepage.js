@@ -281,7 +281,7 @@ const componentsData = [
       title: 'Communication and Collaboration',
       description: 'Enable internal messaging, announcements, parent-teacher communication, and discussion forums.',
       icon: BsChatSquareDots,
-      link: 'communication-collaboration',
+      link: '/communication-collaboration',
     },
     {
       id: 11,
@@ -432,11 +432,12 @@ function Homepage() {
               </h3>
               <p className="text-gray-300">{component.description}</p>
               <Link
-                to={component.link}
-                className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg block"
-              >
-                Go to {component.title}
-              </Link>
+  to={component.link}
+  className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg block text-center"
+>
+  Go to {component.title}
+</Link>
+
             </div>
           ))}
         </div>
