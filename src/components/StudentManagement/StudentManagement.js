@@ -49,7 +49,7 @@ function StudentManagement() {
                 <img
                   src={selectedStudent.image}
                   alt={selectedStudent.name}
-                  className="w-1/2 h-auto rounded-full mr-4"
+                  className="w-1/2 h-auto  mr-4 "
                 />
                 <div className="w-1/2">
                   <h2 className="text-lg font-semibold text-white">{selectedStudent.name}</h2>
