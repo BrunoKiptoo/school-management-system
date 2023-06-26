@@ -1,19 +1,74 @@
 {
-  "posts": [
+  "students": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "John Doe",
+      "grade": "10th",
+      "guardians": [
+        {
+          "name": "Jane Doe",
+          "relationship": "Mother"
+        },
+        {
+          "name": "Mark Smith",
+          "relationship": "Father"
+        }
+      ],
+      "profile": {
+        "age": 16,
+        "gender": "Male",
+        "address": "123 Main Street",
+        "phone": "555-1234"
+      },
+      "attendance": {
+        "daysPresent": 40,
+        "daysAbsent": 2,
+        "daysTardy": 5
+      },
+      "grades": {
+        "math": "A",
+        "science": "B",
+        "english": "A"
+      },
+      "discipline": {
+        "warnings": 1,
+        "suspensions": 0
+      }
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Jane Smith",
+      "grade": "9th",
+      "guardians": [
+        {
+          "name": "David Smith",
+          "relationship": "Father"
+        },
+        {
+          "name": "Emily Johnson",
+          "relationship": "Mother"
+        }
+      ],
+      "profile": {
+        "age": 15,
+        "gender": "Female",
+        "address": "456 Elm Street",
+        "phone": "555-5678"
+      },
+      "attendance": {
+        "daysPresent": 38,
+        "daysAbsent": 4,
+        "daysTardy": 3
+      },
+      "grades": {
+        "math": "B",
+        "science": "A",
+        "english": "B"
+      },
+      "discipline": {
+        "warnings": 2,
+        "suspensions": 0
+      }
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

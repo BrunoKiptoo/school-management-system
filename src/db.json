@@ -21,6 +21,86 @@
         "icon": "BsBriefcaseFill",
         "link": "/guardian-management"
       }
+    ],
+    "students": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "grade": "10th",
+        "image": "https://example.com/images/john-doe.jpg",
+        "guardians": [
+          {
+            "name": "Jane Doe",
+            "relationship": "Mother"
+          },
+          {
+            "name": "Mark Smith",
+            "relationship": "Father"
+          }
+        ],
+        "profile": {
+          "age": 16,
+          "gender": "Male",
+          "address": "123 Main Street",
+          "phone": "555-1234"
+        },
+        "attendance": {
+          "daysPresent": 40,
+          "daysAbsent": 2,
+          "daysTardy": 5
+        },
+        "grades": {
+          "math": "A",
+          "science": "B",
+          "english": "A"
+        },
+        "discipline": {
+          "warnings": 1,
+          "suspensions": 0
+        }
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "grade": "9th",
+        "image": "https://media.istockphoto.com/id/644806678/photo/little-girl-posing-on-gray-background.jpg?s=612x612&w=0&k=20&c=6wWR6Nsve5kX_RcBgzNuwt0Sfa-g1Kh1b9glNCvNTAo=",
+        "guardians": [
+          {
+            "name": "David Smith",
+            "relationship": "Father"
+          },
+          {
+            "name": "Emily Johnson",
+            "relationship": "Mother"
+          }
+        ],
+        "profile": {
+          "age": 15,
+          "gender": "Female",
+          "address": "456 Elm Street",
+          "phone": "555-5678"
+        },
+        "attendance": {
+          "daysPresent": 38,
+          "daysAbsent": 4,
+          "daysTardy": 3
+        },
+        "grades": {
+          "math": "B",
+          "science": "A",
+          "english": "B"
+        },
+        "discipline": {
+          "warnings": 2,
+          "suspensions": 0
+        }
+      }
     ]
+    
+    
+    
   }
+
+
+  
   
