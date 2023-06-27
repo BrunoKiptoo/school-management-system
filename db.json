@@ -253,46 +253,84 @@
       }
     }
   ],
-
-  
-    "teachers": [
-      {
-        "id": 1,
-        "name": "Parker Field",
-        "email": "john.doe@example.com",
-        "image": "https://media.istockphoto.com/id/856599656/photo/passport-picture-of-a-smiling-turkish-businesswoman.jpg?s=612x612&w=0&k=20&c=dgETy-9neViQs7SATDTOOa80QOhVFcLIomBFRxWVN_8=",
-        "phone": "123-456-7890",
-        "address": "123 Main Street, City",
-        "teaches": "Math, Science",
-        "age": 35,
-        "quote": "Education is the most powerful weapon."
-      },
-      {
-        "id": 2,
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com",
-        "image": "https://media.istockphoto.com/id/480956708/photo/portrait-of-a-blonde-german-woman-in-blue-blouse.jpg?s=612x612&w=0&k=20&c=n3an39QYKy1vCGWTOWVutgdVbHjOCTdC81BWbkmaMjM=",
-        "phone": "987-654-3210",
-        "address": "456 Elm Street, City",
-        "teaches": "English, History",
-        "age": 40,
-        "quote": "Teaching is a work of heart."
-      },
-      {
-        "id": 3,
-        "name": "Michael Johnson",
-        "email": "michael.johnson@example.com",
-        "image": "https://epic.uchicago.in/wp-content/uploads/2022/12/Passport-Size-Photo_Chirag-Ramesh.jpg",
-        "phone": "555-123-4567",
-        "address": "789 Oak Street, City",
-        "teaches": "Physics, Chemistry",
-        "age": 45,
-        "quote": "The art of teaching is the art of assisting discovery."
-      }
-    ]
-  
-  
-  
-  
-  
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Parker Field",
+      "email": "john.doe@example.com",
+      "image": "https://media.istockphoto.com/id/856599656/photo/passport-picture-of-a-smiling-turkish-businesswoman.jpg?s=612x612&w=0&k=20&c=dgETy-9neViQs7SATDTOOa80QOhVFcLIomBFRxWVN_8=",
+      "phone": "123-456-7890",
+      "address": "123 Main Street, City",
+      "teaches": "Math, Science",
+      "age": 35,
+      "quote": "Education is the most powerful weapon."
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "image": "https://media.istockphoto.com/id/480956708/photo/portrait-of-a-blonde-german-woman-in-blue-blouse.jpg?s=612x612&w=0&k=20&c=n3an39QYKy1vCGWTOWVutgdVbHjOCTdC81BWbkmaMjM=",
+      "phone": "987-654-3210",
+      "address": "456 Elm Street, City",
+      "teaches": "English, History",
+      "age": 40,
+      "quote": "Teaching is a work of heart."
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "image": "https://epic.uchicago.in/wp-content/uploads/2022/12/Passport-Size-Photo_Chirag-Ramesh.jpg",
+      "phone": "555-123-4567",
+      "address": "789 Oak Street, City",
+      "teaches": "Physics, Chemistry",
+      "age": 45,
+      "quote": "The art of teaching is the art of assisting discovery."
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "teaches": "",
+      "schedule": "",
+      "age": "",
+      "quote": "",
+      "id": 4
+    },
+    {
+      "name": "Bruno Kiptoo",
+      "email": "biwandagu@gmail.com",
+      "phone": "",
+      "address": "",
+      "teaches": "",
+      "schedule": "",
+      "age": "",
+      "quote": "",
+      "id": 5
+    },
+    {
+      "name": "Bruno Kiptoo",
+      "email": "biwandagu@gmail.com",
+      "phone": "+254701800481",
+      "address": "6307",
+      "teaches": "Computer, CRE",
+      "schedule": "",
+      "age": "28",
+      "quote": "never give up",
+      "id": 6
+    },
+    {
+      "name": "Bruno Kiptoo",
+      "email": "biwandagu@gmail.com",
+      "phone": "+254701800481",
+      "address": "6307",
+      "teaches": "Maths, Biology",
+      "schedule": "",
+      "age": "28",
+      "quote": "atleast you call me ",
+      "image": "https://media.licdn.com/dms/image/C4E03AQFwVSlzzKN6NQ/profile-displayphoto-shrink_800_800/0/1545584459051?e=2147483647&v=beta&t=yhexIytYs4pPv7zCfEoChHohpRrmt2VX5G9ViYyJyCw",
+      "id": 7
+    }
+  ]
 }

@@ -129,7 +129,7 @@ function TeacherManagement() {
     try {
       const response = await fetch('http://localhost:3000/teachers');
       const data = await response.json();
-      setTeacherList(data.teachers);
+      setTeacherList(data);
     } catch (error) {
       console.error('Error fetching teacher list:', error);
     }
@@ -164,23 +164,31 @@ function TeacherManagement() {
         },
         body: JSON.stringify(newTeacher)
       });
-      const data = await response.json();
-      console.log('New teacher added:', data);
 
-      // Reset the form
-      setNewTeacher({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        teaches: '',
-        schedule: '',
-        age: '',
-        quote: ''
-      });
+      if (response.ok) {
+        // Teacher added successfully
+        console.log('Teacher added:', newTeacher);
 
-      // Refresh the teacher list
-      fetchTeacherList();
+        // Reset the form
+        setNewTeacher({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          teaches: '',
+          schedule: '',
+          age: '',
+          quote: ''
+        });
+
+        // Close the form
+        toggleFormVisibility();
+
+        // Refresh the teacher list
+        fetchTeacherList();
+      } else {
+        console.error('Failed to add teacher:', response.status);
+      }
     } catch (error) {
       console.error('Error adding teacher:', error);
     }
@@ -234,7 +242,7 @@ function TeacherManagement() {
       </div>
 
       {/* Modal Container */}
-      <div className="pl-4">
+      <div className="flex flex-col items-center pl-4">
         {selectedTeacher ? (
           <div className="bg-gray-800 rounded-lg p-4 flex">
             <div className="flex items-center">
@@ -263,41 +271,111 @@ function TeacherManagement() {
         )}
       </div>
 
-      {/* Add Teacher Form */}
-      {isFormVisible && (
-        <div className="bg-gray-800 rounded-lg p-4 mt-4">
-          <h2 className="text-xl font-semibold text-white mb-4">Add Teacher</h2>
-          <div className="flex flex-col">
-            <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={newTeacher.name}
-              onChange={handleInputChange}
-              className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-            />
-          </div>
-          <div className="flex flex-col mt-2">
-            <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={newTeacher.email}
-              onChange={handleInputChange}
-              className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-            />
-          </div>
-          {/* Add more form elements for other teacher details */}
-          <button
-            className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mt-4"
-            onClick={handleAddTeacher}
-          >
-            Save Teacher
-          </button>
+{/* Add Teacher Form */}
+{isFormVisible && (
+  <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+    <div className="bg-gray-800 rounded-lg p-4 w-96"> {/* Increased width to 96 */}
+      <h2 className="text-xl font-semibold text-white mb-4">Add Teacher</h2>
+      <div className="grid grid-cols-2 gap-2"> {/* Using grid layout for horizontal alignment */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={newTeacher.name}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
         </div>
-      )}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={newTeacher.email}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value={newTeacher.phone}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={newTeacher.address}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="teaches">Teaches:</label>
+          <input
+            type="text"
+            id="teaches"
+            name="teaches"
+            value={newTeacher.teaches}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
+          <input
+            type="text"
+            id="age"
+            name="age"
+            value={newTeacher.age}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="quote">Quote:</label>
+          <input
+            type="text"
+            id="quote"
+            name="quote"
+            value={newTeacher.quote}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="image">Image URL:</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            value={newTeacher.image}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+      </div>
+      <button
+        className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mt-4"
+        onClick={handleAddTeacher}
+      >
+        Save Teacher
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
