@@ -39,23 +39,6 @@ function TeacherManagement() {
     quote: ''
   });
 
-  // const deleteTeacher = async (teacherId) => {
-  //   try {
-  //     const response = await fetch(`http://localhost:3000/teachers/${teacherId}`, {
-  //       method: 'DELETE'
-  //     });
-  
-  //     if (response.ok) {
-  //       console.log('Teacher deleted'); // Log success message
-  //       fetchTeacherList(); // Refresh the teacher list
-  //     } else {
-  //       throw new Error('Failed to delete teacher');
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
 
   const confirmDeleteTeacher = async () => {
     try {

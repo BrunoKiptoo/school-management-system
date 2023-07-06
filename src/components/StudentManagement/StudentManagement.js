@@ -360,6 +360,57 @@ function StudentManagement() {
   const [studentList, setStudentList] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isAddFormVisible, setIsAddFormVisible] = useState(false);
+  const [isEditFormVisible, setIsEditFormVisible] = useState(false);
+  const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
+  const [studentToDelete, setStudentToDelete] = useState(null);
+  const deleteStudent = (student) => {
+    setStudentToDelete(student);
+    setIsDeleteModalVisible(true);
+  };
+
+  const [newStudent, setNewStudent] = useState({
+    name: '', 
+    grade: '', 
+    image: '',
+    guardians: '',
+    profile: '',
+    attendance: '',
+    grades: '', 
+    discipline: ''
+   
+  });
+
+  const [editedStudent, setEditedStudent] = useState({
+    name: '', 
+    grade: '', 
+    image: '',
+    guardians: '',
+    profile: '',
+    attendance: '',
+    grades: '', 
+    discipline: ''
+  });
+
+  const confirmDeleteStudent = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/students/${studentToDelete.id}`, {
+        method: 'DELETE'
+      });
+  
+      if (response.ok) {
+        console.log('Student deleted'); // Log success message
+        fetchStudentList(); // Refresh the teacher list
+      } else {
+        throw new Error('Failed to delete student');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  
+    setIsDeleteModalVisible(false); // Close the confirmation modal
+    setStudentToDelete(null); // Clear the teacher to be deleted
+  };
 
   useEffect(() => {
     fetchStudentList();
@@ -375,6 +426,30 @@ function StudentManagement() {
     }
   };
 
+  const handleEditTeacher = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/students/${selectedStudent.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(editedStudent),
+      });
+  
+      if (response.ok) {
+        const updatedStudent = await response.json();
+        console.log(updatedStudent); // Log the updated teacher data
+        setSelectedStudent(updatedStudent); // Update the selected teacher with the updated data
+        toggleEditFormVisibility(); // Close the edit form
+        fetchStudentList(); // Refresh the teacher list
+      } else {
+        throw new Error('Failed to edit student');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleStudentClick = (student) => {
     setSelectedStudent(student);
   };
@@ -383,13 +458,79 @@ function StudentManagement() {
     setSearchTerm(event.target.value);
   };
 
+  
+  const toggleAddFormVisibility = () => {
+    setIsAddFormVisible(!isAddFormVisible);
+    // setnewStudent(prevTeacher);
+  };
+
+  const toggleEditFormVisibility = () => {
+    setIsEditFormVisible(!isEditFormVisible);
+    setEditedStudent(selectedStudent); // Initialize the editedStudent state with the selected teacher's data
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setEditedStudent((prevStudent) => ({
+      ...prevStudent,
+      [name]: value
+    }));
+  };
+
+  const handleAddInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewStudent((prevStudent) => ({
+      ...prevStudent,
+      [name]: value
+    }));
+  };
+
+  const handleAddStudent = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/students', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newStudent)
+      });
+
+      if (response.ok) {
+        // Teacher added successfully
+        console.log('Student added:', newStudent);
+
+        // Reset the form
+        setNewStudent({
+          name: '', 
+          grade: '', 
+          image: '',
+          guardians: '',
+          profile: '',
+          attendance: '',
+          grades: '', 
+          discipline: ''
+        });
+
+        // Close the form
+        toggleAddFormVisibility();
+
+        // Refresh the teacher list
+        fetchStudentList();
+      } else {
+        console.error('Failed to add student:', response.status);
+      }
+    } catch (error) {
+      console.error('Error adding student:', error);
+    }
+  };
+
   const filteredStudentList = studentList.filter((student) =>
     student.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-900">
-      {/* Student List Container */}
+      {/* Sudent List Container */}
       <div className="w-1/3 pr-4">
         <h1 className="text-3xl font-semibold text-white mb-4">Student List</h1>
         <div className="flex items-center mb-4">
@@ -413,13 +554,21 @@ function StudentManagement() {
                 onClick={() => handleStudentClick(student)}
               >
                 <h2 className="text-lg font-semibold text-white">{student.name}</h2>
-                <p className="text-sm text-gray-300">Grade: {student.grade}</p>
+                <p className="text-sm text-gray-300">Email: {student.Guardians}</p>
               </div>
             ))
           ) : (
             <p className="text-white">No students found.</p>
           )}
         </div>
+
+        {/* Add Student Button */}
+        <button
+          className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mt-4"
+          onClick={toggleAddFormVisibility}
+        >
+          Add Student
+        </button>
       </div>
 
       {/* Modal Container */}
@@ -470,14 +619,279 @@ function StudentManagement() {
                     {selectedStudent.discipline.suspensions}
                   </p>
                 </div>
+                <button
+            className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mt-4"
+            onClick={toggleEditFormVisibility}
+          >
+            Edit
+          </button>
+          <button
+  className="bg-red-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-red-800 focus:outline-none mt-4 ml-4"
+  onClick={() => deleteStudent(selectedStudent)}
+>
+  Delete
+</button>
+
               </div>
             </div>
           </div>
         ) : (
           <p className="text-white">Select a student to view details.</p>
         )}
+          {isDeleteModalVisible && (
+    <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+      <div className="bg-gray-800 rounded-lg p-4 w-96">
+        <p className="text-white">
+          Are you sure you want to delete {studentToDelete?.name} from the school database? This action is irreversible and will permanently delete the teacher.
+        </p>
+        <div className="flex justify-end mt-4">
+          <button
+            className="bg-red-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-red-800 focus:outline-none"
+            onClick={confirmDeleteStudent}
+          >
+            Delete
+          </button>
+          <button
+            className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none ml-4"
+            onClick={() => setIsDeleteModalVisible(false)}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
+  )}
+      </div>
+
+      
+      {/* Add Teacher Form  */}
+      {isAddFormVisible && (
+        <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+          <div className="bg-gray-800 rounded-lg p-4 w-96">
+            <h2 className="text-xl font-semibold text-white mb-4">Add Teacher</h2>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={newStudent.name}
+                  onChange={handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={newStudent.email}
+                  onChange={handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={newStudent.phone}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={newStudent.address}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="teaches">Teaches:</label>
+                <input
+                  type="text"
+                  id="teaches"
+                  name="teaches"
+                  value={newStudent.teaches}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <input
+                  type="text"
+                  id="schedule"
+                  name="schedule"
+                  value={newStudent.schedule}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
+                <input
+                  type="text"
+                  id="age"
+                  name="age"
+                  value={newStudent.age}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="quote">Quote:</label>
+                <input
+                  type="text"
+                  id="quote"
+                  name="quote"
+                  value={newStudent.quote}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+            </div>
+            <div className="flex justify-end mt-4">
+              <button
+                className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
+                onClick={handleAddStudent}
+              >
+                Add
+              </button>
+              <button
+                className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
+                onClick={toggleAddFormVisibility}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+        {/* Edit Teacher Form */}
+        {isEditFormVisible && (
+        <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+          <div className="bg-gray-800 rounded-lg p-4 w-96">
+            <h2 className="text-xl font-semibold text-white mb-4">Edit Teacher</h2>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={editedStudent.name}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={editedStudent.email}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={editedStudent.phone}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={editedStudent.address}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="teaches">Teaches:</label>
+                <input
+                  type="text"
+                  id="teaches"
+                  name="teaches"
+                  value={editedStudent.teaches}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <input
+                  type="text"
+                  id="schedule"
+                  name="schedule"
+                  value={editedStudent.schedule}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
+                <input
+                  type="text"
+                  id="age"
+                  name="age"
+                  value={editedStudent.age}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="quote">Quote:</label>
+                <input
+                  type="text"
+                  id="quote"
+                  name="quote"
+                  value={editedStudent.quote}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+            </div>
+            <div className="flex justify-end mt-4">
+              <button
+                className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
+                onClick={handleEditTeacher}
+              >
+                Save
+              </button>
+              <button
+                className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
+                onClick={toggleEditFormVisibility}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+
+    
   );
 }
 
