@@ -267,14 +267,15 @@
     },
     {
       "id": 2,
-      "name": "Jane Smith",
+      "name": "Esther",
       "email": "jane.smith@example.com",
       "image": "https://media.istockphoto.com/id/480956708/photo/portrait-of-a-blonde-german-woman-in-blue-blouse.jpg?s=612x612&w=0&k=20&c=n3an39QYKy1vCGWTOWVutgdVbHjOCTdC81BWbkmaMjM=",
       "phone": "987-654-3210",
-      "address": "456 Elm Street, City",
+      "address": "6307, Kisumu",
       "teaches": "English, History",
       "age": 40,
-      "quote": "Teaching is a work of heart."
+      "quote": "Teaching is a work of heart.",
+      "schedule": "10-5 maths"
     },
     {
       "id": 3,
@@ -408,6 +409,51 @@
       "age": "HGHGH",
       "quote": "HBHHG",
       "id": 14
+    },
+    {
+      "name": "hoe",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "teaches": "",
+      "schedule": "",
+      "age": "",
+      "quote": "hoeing",
+      "id": 15
+    },
+    {
+      "name": "WHATS FREE",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "teaches": "",
+      "schedule": "HBHGHGHG",
+      "age": "4",
+      "quote": "JHJHHJH",
+      "id": 16
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "teaches": "",
+      "schedule": "",
+      "age": "",
+      "quote": "",
+      "id": 17
+    },
+    {
+      "name": "nbnbnbnbnb",
+      "email": "",
+      "phone": "mnmnmnmn",
+      "address": "",
+      "teaches": "",
+      "schedule": "mnmnn",
+      "age": "",
+      "quote": "",
+      "": "",
+      "id": 18
     }
   ]
 }
