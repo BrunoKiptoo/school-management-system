@@ -73,8 +73,8 @@
 //                     <p className="text-xs text-gray-300">
 //                       Age: {selectedStudent.profile.age} | Gender: {selectedStudent.profile.gender}
 //                     </p>
-//                     <p className="text-xs text-gray-300">Address: {selectedStudent.profile.address}</p>
-//                     <p className="text-xs text-gray-300">Phone: {selectedStudent.profile.phone}</p>
+//                     <p className="text-xs text-gray-300">age: {selectedStudent.profile.age}</p>
+//                     <p className="text-xs text-gray-300">image: {selectedStudent.profile.image}</p>
 //                   </div>
 //                   <div className="mt-2">
 //                     <h3 className="text-sm font-semibold text-white">Attendance:</h3>
@@ -186,8 +186,8 @@
 //                   <p className="text-base text-gray-300">
 //                     Age: {selectedStudent.profile.age} | Gender: {selectedStudent.profile.gender}
 //                   </p>
-//                   <p className="text-base text-gray-300">Address: {selectedStudent.profile.address}</p>
-//                   <p className="text-base text-gray-300">Phone: {selectedStudent.profile.phone}</p>
+//                   <p className="text-base text-gray-300">age: {selectedStudent.profile.age}</p>
+//                   <p className="text-base text-gray-300">image: {selectedStudent.profile.image}</p>
 //                 </div>
 //                 <div className="mt-6">
 //                   <h3 className="text-lg font-semibold text-white">Attendance:</h3>
@@ -318,8 +318,8 @@
 //                   <p className="text-base text-gray-300">
 //                     Age: {selectedStudent.profile.age} | Gender: {selectedStudent.profile.gender}
 //                   </p>
-//                   <p className="text-base text-gray-300">Address: {selectedStudent.profile.address}</p>
-//                   <p className="text-base text-gray-300">Phone: {selectedStudent.profile.phone}</p>
+//                   <p className="text-base text-gray-300">age: {selectedStudent.profile.age}</p>
+//                   <p className="text-base text-gray-300">image: {selectedStudent.profile.image}</p>
 //                 </div>
 //                 <div className="mt-6">
 //                   <h3 className="text-lg font-semibold text-white">Attendance:</h3>
@@ -400,7 +400,7 @@ function StudentManagement() {
   
       if (response.ok) {
         console.log('Student deleted'); // Log success message
-        fetchStudentList(); // Refresh the teacher list
+        fetchStudentList(); // Refresh the student list
       } else {
         throw new Error('Failed to delete student');
       }
@@ -409,7 +409,7 @@ function StudentManagement() {
     }
   
     setIsDeleteModalVisible(false); // Close the confirmation modal
-    setStudentToDelete(null); // Clear the teacher to be deleted
+    setStudentToDelete(null); // Clear the student to be deleted
   };
 
   useEffect(() => {
@@ -426,7 +426,7 @@ function StudentManagement() {
     }
   };
 
-  const handleEditTeacher = async () => {
+  const handleEditstudent = async () => {
     try {
       const response = await fetch(`http://localhost:3000/students/${selectedStudent.id}`, {
         method: 'PUT',
@@ -438,10 +438,10 @@ function StudentManagement() {
   
       if (response.ok) {
         const updatedStudent = await response.json();
-        console.log(updatedStudent); // Log the updated teacher data
-        setSelectedStudent(updatedStudent); // Update the selected teacher with the updated data
+        console.log(updatedStudent); // Log the updated student data
+        setSelectedStudent(updatedStudent); // Update the selected student with the updated data
         toggleEditFormVisibility(); // Close the edit form
-        fetchStudentList(); // Refresh the teacher list
+        fetchStudentList(); // Refresh the student list
       } else {
         throw new Error('Failed to edit student');
       }
@@ -461,12 +461,12 @@ function StudentManagement() {
   
   const toggleAddFormVisibility = () => {
     setIsAddFormVisible(!isAddFormVisible);
-    // setnewStudent(prevTeacher);
+    // setnewStudent(prevstudent);
   };
 
   const toggleEditFormVisibility = () => {
     setIsEditFormVisible(!isEditFormVisible);
-    setEditedStudent(selectedStudent); // Initialize the editedStudent state with the selected teacher's data
+    setEditedStudent(selectedStudent); // Initialize the editedStudent state with the selected student's data
   };
 
   const handleInputChange = (event) => {
@@ -496,7 +496,7 @@ function StudentManagement() {
       });
 
       if (response.ok) {
-        // Teacher added successfully
+        // student added successfully
         console.log('Student added:', newStudent);
 
         // Reset the form
@@ -514,7 +514,7 @@ function StudentManagement() {
         // Close the form
         toggleAddFormVisibility();
 
-        // Refresh the teacher list
+        // Refresh the student list
         fetchStudentList();
       } else {
         console.error('Failed to add student:', response.status);
@@ -595,8 +595,8 @@ function StudentManagement() {
                   <p className="text-base text-gray-300">
                     Age: {selectedStudent.profile.age} | Gender: {selectedStudent.profile.gender}
                   </p>
-                  <p className="text-base text-gray-300">Address: {selectedStudent.profile.address}</p>
-                  <p className="text-base text-gray-300">Phone: {selectedStudent.profile.phone}</p>
+            
+       
                 </div>
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold text-white">Attendance:</h3>
@@ -642,7 +642,7 @@ function StudentManagement() {
     <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
       <div className="bg-gray-800 rounded-lg p-4 w-96">
         <p className="text-white">
-          Are you sure you want to delete {studentToDelete?.name} from the school database? This action is irreversible and will permanently delete the teacher.
+          Are you sure you want to delete {studentToDelete?.name} from the school database? This action is irreversible and will permanently delete the student.
         </p>
         <div className="flex justify-end mt-4">
           <button
@@ -664,11 +664,11 @@ function StudentManagement() {
       </div>
 
       
-      {/* Add Teacher Form  */}
+      {/* Add student Form  */}
       {isAddFormVisible && (
         <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
           <div className="bg-gray-800 rounded-lg p-4 w-96">
-            <h2 className="text-xl font-semibold text-white mb-4">Add Teacher</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Add student</h2>
             <div className="grid grid-cols-2 gap-2">
               <div className="flex flex-col">
                 <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
@@ -682,78 +682,79 @@ function StudentManagement() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Grade:</label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={newStudent.email}
+                  type="text"
+                  id="grade"
+                  name="grade"
+                  value={newStudent.grade}
                   onChange={handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="image">image:</label>
                 <input
                   type="text"
-                  id="phone"
-                  name="phone"
-                  value={newStudent.phone}
+                  id="image"
+                  name="image"
+                  value={newStudent.image}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="guardians">Guardians:</label>
+                <input
+                  type="text"
+                  id="guardians"
+                  name="guardians"
+                  value={newStudent.guardians}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="profile">Profile:</label>
                 <input
                   type="text"
-                  id="address"
-                  name="address"
-                  value={newStudent.address}
+                  id="profile"
+                  name="profile"
+                  value={newStudent.profile}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="teaches">Teaches:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Attendance:</label>
                 <input
                   type="text"
-                  id="teaches"
-                  name="teaches"
-                  value={newStudent.teaches}
+                  id="attendance"
+                  name="attendance"
+                  value={newStudent.attendance}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="grades">Grades:</label>
                 <input
                   type="text"
-                  id="schedule"
-                  name="schedule"
-                  value={newStudent.schedule}
+                  id="grades"
+                  name="grades"
+                  value={newStudent.grades}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="discipline">Discipline:</label>
                 <input
                   type="text"
-                  id="age"
-                  name="age"
-                  value={newStudent.age}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="quote">Quote:</label>
-                <input
-                  type="text"
-                  id="quote"
-                  name="quote"
-                  value={newStudent.quote}
+                  id="discipline"
+                  name="discipline"
+                  value={newStudent.discipline}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
@@ -777,11 +778,12 @@ function StudentManagement() {
         </div>
       )}
 
-        {/* Edit Teacher Form */}
+        {/* Edit student Form */}
         {isEditFormVisible && (
         <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
           <div className="bg-gray-800 rounded-lg p-4 w-96">
-            <h2 className="text-xl font-semibold text-white mb-4">Edit Teacher</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Edit student</h2>
+          
             <div className="grid grid-cols-2 gap-2">
               <div className="flex flex-col">
                 <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
@@ -789,93 +791,95 @@ function StudentManagement() {
                   type="text"
                   id="name"
                   name="name"
-                  value={editedStudent.name}
-                  onChange={handleInputChange}
+                  value={newStudent.name}
+                  onChange={handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={editedStudent.email}
-                  onChange={handleInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Grade:</label>
                 <input
                   type="text"
-                  id="phone"
-                  name="phone"
-                  value={editedStudent.phone}
-                  onChange={handleInputChange}
+                  id="grade"
+                  name="grade"
+                  value={newStudent.grade}
+                  onChange={handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="image">image:</label>
                 <input
                   type="text"
-                  id="address"
-                  name="address"
-                  value={editedStudent.address}
-                  onChange={handleInputChange}
+                  id="image"
+                  name="image"
+                  value={newStudent.image}
+                  onChange={ handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="guardians">Guardians:</label>
+                <input
+                  type="text"
+                  id="guardians"
+                  name="guardians"
+                  value={newStudent.guardians}
+                  onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="teaches">Teaches:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="profile">Profile:</label>
                 <input
                   type="text"
-                  id="teaches"
-                  name="teaches"
-                  value={editedStudent.teaches}
-                  onChange={handleInputChange}
+                  id="profile"
+                  name="profile"
+                  value={newStudent.profile}
+                  onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Attendance:</label>
                 <input
                   type="text"
-                  id="schedule"
-                  name="schedule"
-                  value={editedStudent.schedule}
-                  onChange={handleInputChange}
+                  id="attendance"
+                  name="attendance"
+                  value={newStudent.attendance}
+                  onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="grades">Grades:</label>
                 <input
                   type="text"
-                  id="age"
-                  name="age"
-                  value={editedStudent.age}
-                  onChange={handleInputChange}
+                  id="grades"
+                  name="grades"
+                  value={newStudent.grades}
+                  onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="quote">Quote:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="discipline">Discipline:</label>
                 <input
                   type="text"
-                  id="quote"
-                  name="quote"
-                  value={editedStudent.quote}
-                  onChange={handleInputChange}
+                  id="discipline"
+                  name="discipline"
+                  value={newStudent.discipline}
+                  onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
               </div>
             </div>
+
             <div className="flex justify-end mt-4">
               <button
                 className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
-                onClick={handleEditTeacher}
+                onClick={handleEditstudent}
               >
                 Save
               </button>
@@ -887,7 +891,10 @@ function StudentManagement() {
               </button>
             </div>
           </div>
-        </div>
+   
+            </div>
+  
+     
       )}
     </div>
 

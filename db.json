@@ -75,24 +75,10 @@
     {
       "id": 4,
       "name": "Gregory Kipsang",
-      "grade": "9th",
-      "image": "https://media.istockphoto.com/id/944986276/photo/studio-portrait-of-young-black-boy-smiling.jpg?s=612x612&w=0&k=20&c=FfgcprnNpeyanJkyW-2Y7Ama0ZWqeShKcUFWHXqv7B4=",
-      "guardians": [
-        {
-          "name": "David Smith",
-          "relationship": "Father"
-        },
-        {
-          "name": "Emily Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 15,
-        "gender": "Female",
-        "address": "456 Elm Street",
-        "phone": "555-5678"
-      },
+      "grade": "8th",
+      "image": "",
+      "guardians": "",
+      "profile": "",
       "attendance": {
         "daysPresent": 38,
         "daysAbsent": 4,
@@ -106,7 +92,8 @@
       "discipline": {
         "warnings": 2,
         "suspensions": 0
-      }
+      },
+      "age": "13"
     },
     {
       "id": 3,
