@@ -261,7 +261,7 @@ function StudentManagement() {
           <span className="font-bold">Parent Contact Email:</span> {selectedStudent.parentContactEmail}
         </p>
         <p className="text-base text-gray-300">
-          <span className="font-bold">Parent Contact Phone:</span> {selectedStudent.parentContactPhone}
+          <span className="font-bold ">Parent Contact Phone:</span> {selectedStudent.parentContactPhone}
         </p>
           </div>
           {/* <div className="mt-6">
@@ -285,6 +285,7 @@ function StudentManagement() {
               {selectedStudent.disciplineSuspensions}
             </p>
           </div> */}
+          <div className='mt-8'></div>
           <button
             className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mt-4"
             onClick={toggleEditFormVisibility}
