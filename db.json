@@ -7,37 +7,31 @@
       "age": 16,
       "grade": "10th",
       "image": "https://media.istockphoto.com/id/944987870/photo/passport-id-portrait-of-african-boy.jpg?s=612x612&w=0&k=20&c=MFLSiQhNI85FvRMU_hETT_1jT_L5r0MqavfN6poHuTA=",
-      "guardians": [
-        {
-          "name": "Jane Doe",
-          "relationship": "Mother"
-        },
-        {
-          "name": "Mark Smith",
-          "relationship": "Father"
-        }
-      ],
-      "profile": {
-        "age": 16,
-        "gender": "Male",
-        "address": "123 Main Street",
-        "phone": "555-1234",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 40,
-        "daysAbsent": 2,
-        "daysTardy": 5
-      },
-      "grades": {
-        "math": "A",
-        "science": "B",
-        "english": "A"
-      },
-      "discipline": {
-        "warnings": 1,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 2,
@@ -46,37 +40,31 @@
       "age": 16,
       "grade": "9th",
       "image": "https://media.istockphoto.com/id/947193460/photo/id-passport-portrait-of-african-woman-with-serious-expression.jpg?s=612x612&w=0&k=20&c=1USEHj682s9cYeI9T7vZ7yoE32Mzpt_g1rYuHAgLd2Q=",
-      "guardians": [
-        {
-          "name": "David Smith",
-          "relationship": "Father"
-        },
-        {
-          "name": "Emily Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 15,
-        "gender": "Female",
-        "address": "456 Elm Street",
-        "phone": "555-5678",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 38,
-        "daysAbsent": 4,
-        "daysTardy": 3
-      },
-      "grades": {
-        "math": "B",
-        "science": "A",
-        "english": "B"
-      },
-      "discipline": {
-        "warnings": 2,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 3,
@@ -85,37 +73,31 @@
       "age": 16,
       "grade": "11th",
       "image": "https://us.123rf.com/450wm/warrengoldswain/warrengoldswain1611/warrengoldswain161100142/65513941-portrait-of-young-african-black-boy.jpg",
-      "guardians": [
-        {
-          "name": "Michael Johnson",
-          "relationship": "Father"
-        },
-        {
-          "name": "Sarah Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 17,
-        "gender": "Male",
-        "address": "789 Oak Street",
-        "phone": "555-7890",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 42,
-        "daysAbsent": 1,
-        "daysTardy": 2
-      },
-      "grades": {
-        "math": "A",
-        "science": "A",
-        "english": "A"
-      },
-      "discipline": {
-        "warnings": 0,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 2,
@@ -124,37 +106,31 @@
       "age": 16,
       "grade": "9th",
       "image": "https://media.istockphoto.com/id/947193460/photo/id-passport-portrait-of-african-woman-with-serious-expression.jpg?s=612x612&w=0&k=20&c=1USEHj682s9cYeI9T7vZ7yoE32Mzpt_g1rYuHAgLd2Q=",
-      "guardians": [
-        {
-          "name": "David Smith",
-          "relationship": "Father"
-        },
-        {
-          "name": "Emily Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 15,
-        "gender": "Female",
-        "address": "456 Elm Street",
-        "phone": "555-5678",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 38,
-        "daysAbsent": 4,
-        "daysTardy": 3
-      },
-      "grades": {
-        "math": "B",
-        "science": "A",
-        "english": "B"
-      },
-      "discipline": {
-        "warnings": 2,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 4,
@@ -163,37 +139,31 @@
       "age": 16,
       "grade": "9th",
       "image": "https://media.istockphoto.com/id/944986276/photo/studio-portrait-of-young-black-boy-smiling.jpg?s=612x612&w=0&k=20&c=FfgcprnNpeyanJkyW-2Y7Ama0ZWqeShKcUFWHXqv7B4=",
-      "guardians": [
-        {
-          "name": "David Smith",
-          "relationship": "Father"
-        },
-        {
-          "name": "Emily Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 15,
-        "gender": "Female",
-        "address": "456 Elm Street",
-        "phone": "555-5678",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 38,
-        "daysAbsent": 4,
-        "daysTardy": 3
-      },
-      "grades": {
-        "math": "B",
-        "science": "A",
-        "english": "B"
-      },
-      "discipline": {
-        "warnings": 2,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 3,
@@ -202,37 +172,31 @@
       "age": 16,
       "grade": "11th",
       "image": "https://us.123rf.com/450wm/warrengoldswain/warrengoldswain1611/warrengoldswain161100142/65513941-portrait-of-young-african-black-boy.jpg",
-      "guardians": [
-        {
-          "name": "Michael Johnson",
-          "relationship": "Father"
-        },
-        {
-          "name": "Sarah Johnson",
-          "relationship": "Mother"
-        }
-      ],
-      "profile": {
-        "age": 17,
-        "gender": "Male",
-        "address": "789 Oak Street",
-        "phone": "555-7890",
-        "yearJoined": 2015
-      },
-      "attendance": {
-        "daysPresent": 42,
-        "daysAbsent": 1,
-        "daysTardy": 2
-      },
-      "grades": {
-        "math": "A",
-        "science": "A",
-        "english": "A"
-      },
-      "discipline": {
-        "warnings": 0,
-        "suspensions": 0
-      }
+      "guardian1Name": "Jane Doe",
+      "guardian1Relationship": "Mother",
+      "guardian2Name": "Mark Smith",
+      "guardian2Relationship": "Father",
+      "gender": "Male",
+      "address": "123 Main Street",
+      "phone": "555-1234",
+      "yearJoined": 2015,
+      "nationality": "American",
+      "medicalInformation": "None",
+      "extracurricularActivities": ["Basketball", "Chess Club"],
+      "awards": ["Student of the Year 2022"],
+      "interests": ["Reading", "Playing guitar"],
+      "parentContactEmail": "jane@example.com",
+      "parentContactPhone": "555-5678",
+      "attendanceDaysPresent": 40,
+      "attendanceDaysAbsent": 2,
+      "attendanceDaysTardy": 5,
+      "gradesMath": "A",
+      "gradesScience": "B",
+      "gradesEnglish": "A",
+      "disciplineWarnings": 1,
+      "disciplineSuspensions": 0,
+      "additionalField1": "Value1",
+      "additionalField2": "Value2"
     },
     {
       "id": 1,

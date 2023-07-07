@@ -18,11 +18,17 @@ function StudentManagement() {
     name: '', 
     grade: '', 
     image: '',
-    guardians: '',
-    profile: '',
-    attendance: '',
-    grades: '', 
-    discipline: ''
+    gender: '',
+    address: '',
+    phone: '',
+    yearJoined: '',
+    nationality: '',
+    medicalInformation: '',
+    extracurricularActivities:'',
+    awards: '',
+    interests: '',
+    parentContactEmail: '',
+    parentContactPhone: ''
    
   });
 
@@ -30,11 +36,17 @@ function StudentManagement() {
     name: '', 
     grade: '', 
     image: '',
-    guardians: '',
-    profile: '',
-    attendance: '',
-    grades: '', 
-    discipline: ''
+    gender: '',
+    address: '',
+    phone: '',
+    yearJoined: '',
+    nationality: '',
+    medicalInformation: '',
+    extracurricularActivities:'',
+    awards: '',
+    interests: '',
+    parentContactEmail: '',
+    parentContactPhone: ''
   });
 
   const confirmDeleteStudent = async () => {
@@ -71,7 +83,7 @@ function StudentManagement() {
     }
   };
 
-  const handleEditstudent = async () => {
+  const handleEditStudent = async () => {
     try {
       const response = await fetch(`http://localhost:3000/students/${selectedStudent.id}`, {
         method: 'PUT',
@@ -149,11 +161,19 @@ function StudentManagement() {
           name: '', 
           grade: '', 
           image: '',
-          guardians: '',
-          profile: '',
-          attendance: '',
-          grades: '', 
-          discipline: ''
+          gender: '',
+          address: '',
+          phone: '',
+          yearJoined: '',
+          nationality: '',
+          medicalInformation: '',
+          extracurricularActivities:'',
+          awards: '',
+          interests: '',
+          parentContactEmail: '',
+          parentContactPhone: ''
+         
+       
         });
 
         // Close the form
@@ -328,240 +348,391 @@ function StudentManagement() {
     </div>
   )}
 </div>
-
-      
-      {/* Add student Form  */}
-      {isAddFormVisible && (
-        <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
-          <div className="bg-gray-800 rounded-lg p-4 w-96">
-            <h2 className="text-xl font-semibold text-white mb-4">Add student</h2>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={newStudent.name}
-                  onChange={handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Grade:</label>
-                <input
-                  type="text"
-                  id="grade"
-                  name="grade"
-                  value={newStudent.grade}
-                  onChange={handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="image">image:</label>
-                <input
-                  type="text"
-                  id="image"
-                  name="image"
-                  value={newStudent.image}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="guardians">Guardians:</label>
-                <input
-                  type="text"
-                  id="guardians"
-                  name="guardians"
-                  value={newStudent.guardians}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="profile">Profile:</label>
-                <input
-                  type="text"
-                  id="profile"
-                  name="profile"
-                  value={newStudent.profile}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Attendance:</label>
-                <input
-                  type="text"
-                  id="attendance"
-                  name="attendance"
-                  value={newStudent.attendance}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="grades">Grades:</label>
-                <input
-                  type="text"
-                  id="grades"
-                  name="grades"
-                  value={newStudent.grades}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="discipline">Discipline:</label>
-                <input
-                  type="text"
-                  id="discipline"
-                  name="discipline"
-                  value={newStudent.discipline}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-            </div>
-            <div className="flex justify-end mt-4">
-              <button
-                className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
-                onClick={handleAddStudent}
-              >
-                Add
-              </button>
-              <button
-                className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
-                onClick={toggleAddFormVisibility}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
+        {/* Add student Form */}
+{isAddFormVisible && (
+  <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+    <div className="bg-gray-800 rounded-lg p-4 w-96">
+      <h2 className="text-xl font-semibold text-white mb-4">Add student</h2>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={newStudent.name}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
         </div>
-      )}
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="grade">Grade:</label>
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            value={newStudent.grade}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="image">Image:</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            value={newStudent.image}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="gender">Gender:</label>
+          <input
+            type="text"
+            id="gender"
+            name="gender"
+            value={newStudent.gender}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={newStudent.address}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value={newStudent.phone}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="yearJoined">Year Joined:</label>
+          <input
+            type="text"
+            id="yearJoined"
+            name="yearJoined"
+            value={newStudent.yearJoined}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="nationality">Nationality:</label>
+          <input
+            type="text"
+            id="nationality"
+            name="nationality"
+            value={newStudent.nationality}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="medicalInformation">Medical Information:</label>
+          <input
+            type="text"
+            id="medicalInformation"
+            name="medicalInformation"
+            value={newStudent.medicalInformation}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="extracurricularActivities">Extracurricular Activities:</label>
+          <input
+            type="text"
+            id="extracurricularActivities"
+            name="extracurricularActivities"
+            value={newStudent.extracurricularActivities}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="awards">Awards:</label>
+          <input
+            type="text"
+            id="awards"
+            name="awards"
+            value={newStudent.awards}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="interests">Interests:</label>
+          <input
+            type="text"
+            id="interests"
+            name="interests"
+            value={newStudent.interests}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="parentContactEmail">Parent Contact Email:</label>
+          <input
+            type="text"
+            id="parentContactEmail"
+            name="parentContactEmail"
+            value={newStudent.parentContactEmail}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="parentContactPhone">Parent Contact Phone:</label>
+          <input
+            type="text"
+            id="parentContactPhone"
+            name="parentContactPhone"
+            value={newStudent.parentContactPhone}
+            onChange={handleAddInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+      </div>
+      <div className="flex justify-end mt-4">
+        <button
+          className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
+          onClick={handleAddStudent}
+        >
+          Add
+        </button>
+        <button
+          className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
+          onClick={toggleAddFormVisibility}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-        {/* Edit student Form */}
-        {isEditFormVisible && (
-        <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
-          <div className="bg-gray-800 rounded-lg p-4 w-96">
-            <h2 className="text-xl font-semibold text-white mb-4">Edit student</h2>
-          
-            <div className="grid grid-cols-2 gap-2">
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={newStudent.name}
-                  onChange={handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="email">Grade:</label>
-                <input
-                  type="text"
-                  id="grade"
-                  name="grade"
-                  value={newStudent.grade}
-                  onChange={handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="image">image:</label>
-                <input
-                  type="text"
-                  id="image"
-                  name="image"
-                  value={newStudent.image}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
+{/* Edit student Form */}
+{isEditFormVisible && (
+  <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+    <div className="bg-gray-800 rounded-lg p-4 w-96">
+      <h2 className="text-xl font-semibold text-white mb-4">Edit student</h2>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={newStudent.name}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="grade">Grade:</label>
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            value={newStudent.grade}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="image">Image:</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            value={newStudent.image}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
 
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="guardians">Guardians:</label>
-                <input
-                  type="text"
-                  id="guardians"
-                  name="guardians"
-                  value={newStudent.guardians}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="profile">Profile:</label>
-                <input
-                  type="text"
-                  id="profile"
-                  name="profile"
-                  value={newStudent.profile}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="age">Attendance:</label>
-                <input
-                  type="text"
-                  id="attendance"
-                  name="attendance"
-                  value={newStudent.attendance}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="grades">Grades:</label>
-                <input
-                  type="text"
-                  id="grades"
-                  name="grades"
-                  value={newStudent.grades}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="discipline">Discipline:</label>
-                <input
-                  type="text"
-                  id="discipline"
-                  name="discipline"
-                  value={newStudent.discipline}
-                  onChange={ handleAddInputChange}
-                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
-                />
-              </div>
-            </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="gender">Gender:</label>
+          <input
+            type="text"
+            id="gender"
+            name="gender"
+            value={newStudent.gender}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={newStudent.address}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value={newStudent.phone}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="yearJoined">Year Joined:</label>
+          <input
+            type="text"
+            id="yearJoined"
+            name="yearJoined"
+            value={newStudent.yearJoined}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="nationality">Nationality:</label>
+          <input
+            type="text"
+            id="nationality"
+            name="nationality"
+            value={newStudent.nationality}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="medicalInformation">Medical Information:</label>
+          <input
+            type="text"
+            id="medicalInformation"
+            name="medicalInformation"
+            value={newStudent.medicalInformation}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="extracurricularActivities">Extracurricular Activities:</label>
+          <input
+            type="text"
+            id="extracurricularActivities"
+            name="extracurricularActivities"
+            value={newStudent.extracurricularActivities}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="awards">Awards:</label>
+          <input
+            type="text"
+            id="awards"
+            name="awards"
+            value={newStudent.awards}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="interests">Interests:</label>
+          <input
+            type="text"
+            id="interests"
+            name="interests"
+            value={newStudent.interests}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="parentContactEmail">Parent Contact Email:</label>
+          <input
+            type="text"
+            id="parentContactEmail"
+            name="parentContactEmail"
+            value={newStudent.parentContactEmail}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        {/* Add more input fields for the new properties */}
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="parentContactPhone">Parent Contact Phone:</label>
+          <input
+            type="text"
+            id="parentContactPhone"
+            name="parentContactPhone"
+            value={newStudent.parentContactPhone}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+      </div>
+      <div className="flex justify-end mt-4">
+        <button
+          className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
+          onClick={handleEditStudent}
+        >
+          Save
+        </button>
+        <button
+          className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
+          onClick={toggleEditFormVisibility}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-            <div className="flex justify-end mt-4">
-              <button
-                className="bg-purple-900 rounded-lg px-4 py-2 text-white font-semibold hover:bg-purple-800 focus:outline-none mr-2"
-                onClick={handleEditstudent}
-              >
-                Save
-              </button>
-              <button
-                className="bg-gray-700 rounded-lg px-4 py-2 text-white font-semibold hover:bg-gray-600 focus:outline-none"
-                onClick={toggleEditFormVisibility}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-   
-            </div>
-  
-     
-      )}
     </div>
 
     
