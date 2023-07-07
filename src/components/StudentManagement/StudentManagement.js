@@ -552,7 +552,7 @@ function StudentManagement() {
             type="text"
             id="name"
             name="name"
-            value={newStudent.name}
+            value={editedStudent.name}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -564,7 +564,7 @@ function StudentManagement() {
             type="text"
             id="grade"
             name="grade"
-            value={newStudent.grade}
+            value={editedStudent.grade}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -576,7 +576,7 @@ function StudentManagement() {
             type="text"
             id="image"
             name="image"
-            value={newStudent.image}
+            value={editedStudent.image}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -589,7 +589,7 @@ function StudentManagement() {
             type="text"
             id="gender"
             name="gender"
-            value={newStudent.gender}
+            value={editedStudent.gender}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -601,7 +601,7 @@ function StudentManagement() {
             type="text"
             id="address"
             name="address"
-            value={newStudent.address}
+            value={editedStudent.address}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -613,7 +613,7 @@ function StudentManagement() {
             type="text"
             id="phone"
             name="phone"
-            value={newStudent.phone}
+            value={editedStudent.phone}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -625,7 +625,7 @@ function StudentManagement() {
             type="text"
             id="yearJoined"
             name="yearJoined"
-            value={newStudent.yearJoined}
+            value={editedStudent.yearJoined}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -637,7 +637,7 @@ function StudentManagement() {
             type="text"
             id="nationality"
             name="nationality"
-            value={newStudent.nationality}
+            value={editedStudent.nationality}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -649,7 +649,7 @@ function StudentManagement() {
             type="text"
             id="medicalInformation"
             name="medicalInformation"
-            value={newStudent.medicalInformation}
+            value={editedStudent.medicalInformation}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -661,7 +661,7 @@ function StudentManagement() {
             type="text"
             id="extracurricularActivities"
             name="extracurricularActivities"
-            value={newStudent.extracurricularActivities}
+            value={editedStudent.extracurricularActivities}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -673,7 +673,7 @@ function StudentManagement() {
             type="text"
             id="awards"
             name="awards"
-            value={newStudent.awards}
+            value={editedStudent.awards}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -685,7 +685,7 @@ function StudentManagement() {
             type="text"
             id="interests"
             name="interests"
-            value={newStudent.interests}
+            value={editedStudent.interests}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -697,7 +697,7 @@ function StudentManagement() {
             type="text"
             id="parentContactEmail"
             name="parentContactEmail"
-            value={newStudent.parentContactEmail}
+            value={editedStudent.parentContactEmail}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
@@ -709,7 +709,7 @@ function StudentManagement() {
             type="text"
             id="parentContactPhone"
             name="parentContactPhone"
-            value={newStudent.parentContactPhone}
+            value={editedStudent.parentContactPhone}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />

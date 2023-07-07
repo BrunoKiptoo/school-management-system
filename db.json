@@ -17,9 +17,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -50,9 +58,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -68,7 +84,7 @@
     },
     {
       "id": 3,
-      "name": "Alex Johnson",
+      "name": "Alex John",
       "dateOfBirth": "2007-08-15",
       "age": 16,
       "grade": "11th",
@@ -83,9 +99,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -116,9 +140,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -149,9 +181,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -182,9 +222,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -215,9 +263,17 @@
       "yearJoined": 2015,
       "nationality": "American",
       "medicalInformation": "None",
-      "extracurricularActivities": ["Basketball", "Chess Club"],
-      "awards": ["Student of the Year 2022"],
-      "interests": ["Reading", "Playing guitar"],
+      "extracurricularActivities": [
+        "Basketball",
+        "Chess Club"
+      ],
+      "awards": [
+        "Student of the Year 2022"
+      ],
+      "interests": [
+        "Reading",
+        "Playing guitar"
+      ],
       "parentContactEmail": "jane@example.com",
       "parentContactPhone": "555-5678",
       "attendanceDaysPresent": 40,
@@ -231,8 +287,6 @@
       "additionalField1": "Value1",
       "additionalField2": "Value2"
     }
-
-
   ],
   "teachers": [
     {
