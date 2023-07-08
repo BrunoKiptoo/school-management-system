@@ -23,7 +23,7 @@ function TeacherManagement() {
     phone: '',
     address: '',
     teaches: '',
-    schedule: '',
+    yearJoined: '',
     age: '',
     quote: ''
   });
@@ -34,7 +34,7 @@ function TeacherManagement() {
     phone: '',
     address: '',
     teaches: '',
-    schedule: '',
+    yearJoined: '',
     age: '',
     quote: ''
   });
@@ -157,7 +157,7 @@ function TeacherManagement() {
           phone: '',
           address: '',
           teaches: '',
-          schedule: '',
+          yearJoined: '',
           age: '',
           quote: ''
         });
@@ -251,8 +251,8 @@ function TeacherManagement() {
             <span className="text-white">{selectedTeacher.teaches}</span>
           </div>
           <div className="mb-4">
-            <span className="text-gray-400 mr-2">Schedule:</span>
-            <span className="text-white">{selectedTeacher.schedule}</span>
+            <span className="text-gray-400 mr-2">Year Joined:</span>
+            <span className="text-white">{selectedTeacher.yearJoined}</span>
           </div>
           <div className="mb-4">
             <span className="text-gray-400 mr-2">Age:</span>
@@ -369,12 +369,12 @@ function TeacherManagement() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="yearJoined">Year Joined:</label>
                 <input
                   type="text"
-                  id="schedule"
-                  name="schedule"
-                  value={newTeacher.schedule}
+                  id="yearJoined"
+                  name="yearJoined"
+                  value={newTeacher.yearJoined}
                   onChange={ handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
@@ -482,12 +482,12 @@ function TeacherManagement() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="text-sm text-gray-300 mb-2" htmlFor="schedule">Schedule:</label>
+                <label className="text-sm text-gray-300 mb-2" htmlFor="yearJoined">Year Joined:</label>
                 <input
                   type="text"
-                  id="schedule"
-                  name="schedule"
-                  value={editedTeacher.schedule}
+                  id="yearJoined"
+                  name="yearJoined"
+                  value={editedTeacher.yearJoined}
                   onChange={handleInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
