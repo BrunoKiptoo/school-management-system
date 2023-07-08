@@ -18,6 +18,8 @@ function StudentManagement() {
     name: '', 
     grade: '', 
     image: '',
+    dateOfBirth: '',
+    age: '',
     gender: '',
     address: '',
     phone: '',
@@ -36,6 +38,8 @@ function StudentManagement() {
     name: '', 
     grade: '', 
     image: '',
+    dateOfBirth: '',
+    age: '',
     gender: '',
     address: '',
     phone: '',
@@ -161,6 +165,8 @@ function StudentManagement() {
           name: '', 
           grade: '', 
           image: '',
+          dateOfBirth: '',
+          age: '',
           gender: '',
           address: '',
           phone: '',
@@ -269,13 +275,13 @@ function StudentManagement() {
           <span className="font-bold">Medical Information:</span> {selectedStudent.medicalInformation}
         </p>
         <p className="text-base text-gray-300">
-          <span className="font-bold">Extracurricular Activities:</span> {selectedStudent.extracurricularActivities.join(', ')}
+          <span className="font-bold">Extracurricular Activities:</span> {selectedStudent.extracurricularActivities}
         </p>
         <p className="text-base text-gray-300">
-          <span className="font-bold">Awards:</span> {selectedStudent.awards.join(', ')}
+          <span className="font-bold">Awards:</span> {selectedStudent.awards}
         </p>
         <p className="text-base text-gray-300">
-          <span className="font-bold">Interests:</span> {selectedStudent.interests.join(', ')}
+          <span className="font-bold">Interests:</span> {selectedStudent.interests}
         </p>
         <p className="text-base text-gray-300">
           <span className="font-bold">Parent Contact Email:</span> {selectedStudent.parentContactEmail}
@@ -413,18 +419,30 @@ function StudentManagement() {
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
         </div>
-        {/* Add more input fields for the new properties */}
-        <div className="flex flex-col">
-          <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+                {/* Add more input fields for the new properties */}
+                <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
           <input
             type="text"
-            id="phone"
-            name="phone"
-            value={newStudent.phone}
-            onChange={handleAddInputChange}
+            id="age"
+            name="age"
+            value={editedStudent.age}
+            onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
         </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="dateOfBirth"> Date Of Birth:</label>
+          <input
+            type="text"
+            id="dateOfBirth"
+            name="dateOfBirth"
+            value={editedStudent.dateOfBirth}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+
         {/* Add more input fields for the new properties */}
         <div className="flex flex-col">
           <label className="text-sm text-gray-300 mb-2" htmlFor="yearJoined">Year Joined:</label>
@@ -608,12 +626,23 @@ function StudentManagement() {
         </div>
         {/* Add more input fields for the new properties */}
         <div className="flex flex-col">
-          <label className="text-sm text-gray-300 mb-2" htmlFor="phone">Phone:</label>
+          <label className="text-sm text-gray-300 mb-2" htmlFor="age">Age:</label>
           <input
             type="text"
-            id="phone"
-            name="phone"
-            value={editedStudent.phone}
+            id="age"
+            name="age"
+            value={editedStudent.age}
+            onChange={handleInputChange}
+            className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm text-gray-300 mb-2" htmlFor="dateOfBirth"> Date Of Birth:</label>
+          <input
+            type="text"
+            id="dateOfBirth"
+            name="dateOfBirth"
+            value={editedStudent.dateOfBirth}
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
