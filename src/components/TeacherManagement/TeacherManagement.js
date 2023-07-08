@@ -21,6 +21,7 @@ function TeacherManagement() {
     name: '',
     email: '',
     phone: '',
+    image: '',
     address: '',
     teaches: '',
     yearJoined: '',
@@ -31,6 +32,7 @@ function TeacherManagement() {
   const [editedTeacher, setEditedTeacher] = useState({
     name: '',
     email: '',
+    image: '',
     phone: '',
     address: '',
     teaches: '',
@@ -154,6 +156,7 @@ function TeacherManagement() {
         setNewTeacher({
           name: '',
           email: '',
+          image: '',
           phone: '',
           address: '',
           teaches: '',
@@ -196,7 +199,7 @@ function TeacherManagement() {
             Search
           </button>
         </div>
-        <div className="max-h-96 overflow-y-auto">
+        <div className="max-h-96 overflow-y-auto" >
           {filteredTeacherList.length > 0 ? (
             filteredTeacherList.map((teacher) => (
               <div
@@ -230,7 +233,7 @@ function TeacherManagement() {
         <img
           src={selectedTeacher.image}
           alt={selectedTeacher.name}
-          className="w-1/2 h-auto object-cover rounded-l-lg mr-4"
+          className="w-1/2 object-cover rounded-l-lg mr-4"
         />
         <div>
           <h1 className="text-3xl font-semibold text-purple-400 mb-4">{selectedTeacher.name}</h1>
@@ -320,6 +323,17 @@ function TeacherManagement() {
                   id="name"
                   name="name"
                   value={newTeacher.name}
+                  onChange={handleAddInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="image">Image:</label>
+                <input
+                  type="text"
+                  id="image"
+                  name="image"
+                  value={newTeacher.image}
                   onChange={handleAddInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />
@@ -433,6 +447,17 @@ function TeacherManagement() {
                   id="name"
                   name="name"
                   value={editedTeacher.name}
+                  onChange={handleInputChange}
+                  className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-300 mb-2" htmlFor="image">Image:</label>
+                <input
+                  type="text"
+                  id="image"
+                  name="image"
+                  value={editedTeacher.image}
                   onChange={handleInputChange}
                   className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
                 />

@@ -223,12 +223,12 @@
       "id": 1,
       "name": "Parker Field",
       "email": "john.doe@example.com",
-      "image": "https://media.istockphoto.com/id/856599656/photo/passport-picture-of-a-smiling-turkish-businesswoman.jpg?s=612x612&w=0&k=20&c=dgETy-9neViQs7SATDTOOa80QOhVFcLIomBFRxWVN_8=",
+      "image": "https://media.istockphoto.com/id/856479974/photo/passport-picture-businesswoman-with-brown-hair.jpg?s=612x612&w=0&k=20&c=v1tz-nhQjDqRbJN9PGK1giCM5Lw5CSaQITMKwZ7h9kU=",
       "phone": "123-456-7890",
       "address": "123 Main Street, City",
       "teaches": "Math, Science",
       "age": 35,
-      "quote": "Education is the most powerful weapon."
+      "quote": "Education is powerful."
     },
     {
       "id": 3,
@@ -239,7 +239,7 @@
       "address": "789 Oak Street, City",
       "teaches": "Physics, Chemistry",
       "age": 45,
-      "quote": "The art of teaching is the art of assisting discovery."
+      "quote": "Teaching is great"
     },
     {
       "name": "Bruno Kiptoo",
@@ -250,9 +250,21 @@
       "schedule": "",
       "age": "28",
       "quote": "atleast you call me ",
-      "image": "https://media.licdn.com/dms/image/C4E03AQFwVSlzzKN6NQ/profile-displayphoto-shrink_800_800/0/1545584459051?e=2147483647&v=beta&t=yhexIytYs4pPv7zCfEoChHohpRrmt2VX5G9ViYyJyCw",
+      "image": "https://media.istockphoto.com/id/530585651/photo/passport-picture-of-an-italian-woman-with-long-blond-hair.jpg?s=612x612&w=0&k=20&c=YiIBwMx1e2m6DlN-aaxPWKAqC75BEYrXbbaGLZaOP1Q=",
       "id": 7,
       "yearJoined": "2019"
+    },
+    {
+      "name": "zamani",
+      "email": "abc@gmail.com",
+      "phone": "+254701800481",
+      "address": "6307",
+      "teaches": "CRE",
+      "yearJoined": "2023",
+      "age": "34",
+      "quote": "God is good",
+      "id": 8,
+      "image": "https://media.istockphoto.com/id/480956708/photo/portrait-of-a-blonde-german-woman-in-blue-blouse.jpg?s=612x612&w=0&k=20&c=n3an39QYKy1vCGWTOWVutgdVbHjOCTdC81BWbkmaMjM="
     }
   ]
 }
