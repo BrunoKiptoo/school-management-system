@@ -24,7 +24,7 @@ function StudentManagement() {
     address: '',
     phone: '',
     yearJoined: '',
-    nationality: '',
+    // nationality: '',
     medicalInformation: '',
     extracurricularActivities:'',
     awards: '',
@@ -43,7 +43,7 @@ function StudentManagement() {
     gender: '',
     address: '',
     phone: '',
-    yearJoined: '',
+    // yearJoined: '',
     nationality: '',
     medicalInformation: '',
     extracurricularActivities:'',
@@ -171,7 +171,7 @@ function StudentManagement() {
           address: '',
           phone: '',
           yearJoined: '',
-          nationality: '',
+          // nationality: '',
           medicalInformation: '',
           extracurricularActivities:'',
           awards: '',
@@ -268,9 +268,9 @@ function StudentManagement() {
         <p className="text-base text-gray-300">
           <span className="font-bold">Address:</span> {selectedStudent.address}
         </p>
-        <p className="text-base text-gray-300">
+        {/* <p className="text-base text-gray-300">
           <span className="font-bold">Nationality:</span> {selectedStudent.nationality}
-        </p>
+        </p> */}
         <p className="text-base text-gray-300">
           <span className="font-bold">Medical Information:</span> {selectedStudent.medicalInformation}
         </p>
@@ -456,7 +456,7 @@ function StudentManagement() {
           />
         </div>
         {/* Add more input fields for the new properties */}
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <label className="text-sm text-gray-300 mb-2" htmlFor="nationality">Nationality:</label>
           <input
             type="text"
@@ -466,7 +466,7 @@ function StudentManagement() {
             onChange={handleAddInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
-        </div>
+        </div> */}
         {/* Add more input fields for the new properties */}
         <div className="flex flex-col">
           <label className="text-sm text-gray-300 mb-2" htmlFor="medicalInformation">Medical Information:</label>
@@ -660,7 +660,7 @@ function StudentManagement() {
           />
         </div>
         {/* Add more input fields for the new properties */}
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <label className="text-sm text-gray-300 mb-2" htmlFor="nationality">Nationality:</label>
           <input
             type="text"
@@ -670,7 +670,7 @@ function StudentManagement() {
             onChange={handleInputChange}
             className="p-2 rounded-lg bg-gray-700 text-white focus:outline-none"
           />
-        </div>
+        </div> */}
         {/* Add more input fields for the new properties */}
         <div className="flex flex-col">
           <label className="text-sm text-gray-300 mb-2" htmlFor="medicalInformation">Medical Information:</label>
