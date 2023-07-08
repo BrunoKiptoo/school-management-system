@@ -205,7 +205,7 @@ function TeacherManagement() {
                 onClick={() => handleTeacherClick(teacher)}
               >
                 <h2 className="text-lg font-semibold text-white">{teacher.name}</h2>
-                <p className="text-sm text-gray-300">Email: {teacher.email}</p>
+                {/* <p className="text-sm text-gray-300">Email: {teacher.email}</p> */}
               </div>
             ))
           ) : (
