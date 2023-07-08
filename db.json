@@ -197,25 +197,6 @@
       "disciplineSuspensions": 0,
       "additionalField1": "Value1",
       "additionalField2": "Value2"
-    },
-    {
-      "name": "Cheptoo Kigen",
-      "grade": "6th",
-      "image": "https://hopeforkenya.org/assets/images/zz%20(6).jpg",
-      "gender": "Female",
-      "address": "6307 Eldoret",
-      "phone": "+254701800481",
-      "yearJoined": "2023",
-      "nationality": "Kenyan",
-      "medicalInformation": "None",
-      "extracurricularActivities": "Basketball",
-      "awards": "None",
-      "interests": "Painting, Music",
-      "parentContactEmail": "brunochelimo@gmail.com",
-      "parentContactPhone": "0701800481",
-      "id": 5,
-      "age": "8",
-      "dateOfBirth": "19-10-2017"
     }
   ],
   "teachers": [
@@ -228,7 +209,8 @@
       "address": "123 Main Street, City",
       "teaches": "Math, Science",
       "age": 35,
-      "quote": "Education is powerful."
+      "quote": "Education is powerful.",
+      "yearJoined": "2015"
     },
     {
       "id": 3,
