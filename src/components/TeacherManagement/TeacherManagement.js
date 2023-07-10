@@ -181,7 +181,7 @@ function TeacherManagement() {
   const filteredTeacherList = teacherList.filter((teacher) =>
     teacher.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
+// 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-900">
       {/* Teacher List Container */}
